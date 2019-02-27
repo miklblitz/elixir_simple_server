@@ -1,21 +1,7 @@
-# SimpleServer
+## Простой веб сервер на Elixir для замера производительности на выдачу ответа для GET запроса. 
 
-**TODO: Add description**
-
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `simple_server` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [
-    {:simple_server, "~> 0.1.0"}
-  ]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/simple_server](https://hexdocs.pm/simple_server).
-
+**Настройка и запуск сервера:**
+1. mix deps.get
+2. iex -S mix
+3. Установить wrk - https://github.com/wg/wrk/wiki/Installing-wrk-on-Linux
+4. wrk -d30s -t10 -c5000 http://localhost:4004/hello
