@@ -10,6 +10,11 @@ defmodule SimpleServer.Application do
     children = [
       # Starts a worker by calling: SimpleServer.Worker.start_link(arg)
       # {SimpleServer.Worker, arg},
+      Plug.Adapters.Cowboy.child_spec(
+        scheme: :http,
+        plug: SimpleServer.SimpleServerRouter,
+        options: [port: 4004]
+      )
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
